@@ -1867,37 +1867,81 @@ footer{
 </section>
 <!-- ══════════ S20 — FINALE ══════════ -->
 <section class="slide" id="s20">
-  <div class="final-inner">
+  <div class="final-inner" style="padding: 2rem; overflow-y: auto;">
     <div class="f-bg-geo"><div class="fbg1"></div><div class="fbg2"></div></div>
-    <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:'Nunito',sans-serif;font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.2em;color:var(--vert);background:rgba(149,193,31,.12);border:1.5px solid rgba(149,193,31,.25);padding:.3rem 1rem;border-radius:4px;margin-bottom:1.2rem">Parcours LS4YOU · Mission Locale Pays Basque</div>
-      <h2 style="font-family:'Nunito',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--blanc);text-align:center;line-height:1.08;margin-bottom:.5rem">Bienvenue dans la<br><span style="color:var(--vert)">compétence Territoire</span></h2>
-      <p style="font-size:.95rem;color:rgba(255,255,255,.4);text-align:center;margin-bottom:1.5rem;font-style:italic">De quoi parle-t-on ? (8 modules) + Parcours Cartographique (4 ateliers) · LS4YOU</p>
-      <div style="display:flex;flex-direction:column;gap:.5rem;max-width:500px;text-align:left;margin-bottom:1.5rem">
-        <div style="display:flex;align-items:center;gap:.85rem;padding:.65rem .9rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:4px">
-          <div style="width:10px;height:10px;border-radius:50%;background:var(--rose);flex-shrink:0"></div>
-          <div style="font-size:.82rem;color:rgba(255,255,255,.75)"><strong style="color:rgba(255,255,255,.9)">Atelier 1</strong> — Réseau & lieux de légitimité (post-its ROUGES)</div>
+    
+    <div style="position:relative; z-index:1; display:flex; flex-direction:column; width: 100%; max-width: 1000px; margin: 0 auto; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+      
+      <div style="margin-bottom: 2rem;">
+        <h2 style="font-family:'Nunito',sans-serif; font-size:clamp(1.5rem,3vw,2.5rem); font-weight:900; color:#333; text-transform:uppercase; margin-bottom: 0.2rem; line-height: 1.1;">AUTO-ÉVALUATION · COMPÉTENCE TERRITOIRE</h2>
+        <div style="color:var(--rose); font-weight: 700; font-size: 1.1rem;">Parcours LS4YOU — Territoire4U</div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+        
+        <div style="background:var(--orange); border-radius:15px; padding:1.5rem; color:white;">
+          <div style="font-weight:900; text-align:center; margin-bottom:1rem; text-transform:uppercase;">⬤ AXE 1 — RÉSEAU</div>
+          <div style="display:flex; flex-direction:column; gap:0.4rem; font-size:0.95rem; font-weight:600;">
+            <div class="eval-item" data-axis="1" data-val="0" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 0 Je ne sais pas qui peut m'aider</div>
+            <div class="eval-item" data-axis="1" data-val="1" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 1 Je connais 1-2 personnes</div>
+            <div class="eval-item" data-axis="1" data-val="2" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 2 Plusieurs contacts utiles</div>
+            <div class="eval-item" data-axis="1" data-val="3" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 3 Je sais comment les activer</div>
+            <div class="eval-item" data-axis="1" data-val="4" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 4 Action prévue ou faite</div>
+          </div>
         </div>
-        <div style="display:flex;align-items:center;gap:.85rem;padding:.65rem .9rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:4px">
-          <div style="width:10px;height:10px;border-radius:50%;background:var(--vert);flex-shrink:0"></div>
-          <div style="font-size:.82rem;color:rgba(255,255,255,.75)"><strong style="color:rgba(255,255,255,.9)">Atelier 2</strong> — Compétences localisées, CV géographique (post-its VERTS)</div>
+
+        <div style="background:var(--vert); border-radius:15px; padding:1.5rem; color:white;">
+          <div style="font-weight:900; text-align:center; margin-bottom:1rem; text-transform:uppercase;">🕮 AXE 2 — COMPÉTENCES</div>
+          <div style="display:flex; flex-direction:column; gap:0.4rem; font-size:0.95rem; font-weight:600;">
+            <div class="eval-item" data-axis="2" data-val="0" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 0 Je ne vois pas mes compétences</div>
+            <div class="eval-item" data-axis="2" data-val="1" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 1 Expériences sans analyse</div>
+            <div class="eval-item" data-axis="2" data-val="2" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 2 2-3 compétences concrètes</div>
+            <div class="eval-item" data-axis="2" data-val="3" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 3 5 compétences claires</div>
+            <div class="eval-item" data-axis="2" data-val="4" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 4 Lien avec secteurs locaux</div>
+          </div>
         </div>
-        <div style="display:flex;align-items:center;gap:.85rem;padding:.65rem .9rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:4px">
-          <div style="width:10px;height:10px;border-radius:50%;background:var(--bleu);flex-shrink:0"></div>
-          <div style="font-size:.82rem;color:rgba(255,255,255,.75)"><strong style="color:rgba(255,255,255,.9)">Atelier 3</strong> — Solutions concrètes transport/repas/papiers (post-its BLEUS)</div>
+
+        <div style="background:var(--bleu); border-radius:15px; padding:1.5rem; color:white;">
+          <div style="font-weight:900; text-align:center; margin-bottom:1rem; text-transform:uppercase;">⬤ AXE 3 — SOLUTIONS</div>
+          <div style="display:flex; flex-direction:column; gap:0.4rem; font-size:0.95rem; font-weight:600;">
+            <div class="eval-item" data-axis="3" data-val="0" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 0 Pas réfléchi</div>
+            <div class="eval-item" data-axis="3" data-val="1" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 1 Idée vague</div>
+            <div class="eval-item" data-axis="3" data-val="2" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 2 Organisation approximative</div>
+            <div class="eval-item" data-axis="3" data-val="3" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 3 Plan précis + plan B</div>
+            <div class="eval-item" data-axis="3" data-val="4" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 4 Anticipation complète</div>
+          </div>
         </div>
-        <div style="display:flex;align-items:center;gap:.85rem;padding:.65rem .9rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:4px">
-          <div style="width:10px;height:10px;border-radius:50%;background:var(--orange);flex-shrink:0"></div>
-          <div style="font-size:.82rem;color:rgba(255,255,255,.75)"><strong style="color:rgba(255,255,255,.9)">Atelier 4</strong> — Appuis bien-être pour tenir dans la durée (post-its JAUNES)</div>
+
+        <div style="background:var(--rose); border-radius:15px; padding:1.5rem; color:white;">
+          <div style="font-weight:900; text-align:center; margin-bottom:1rem; text-transform:uppercase;">🕮 AXE 4 — RESSOURCES</div>
+          <div style="display:flex; flex-direction:column; gap:0.4rem; font-size:0.95rem; font-weight:600;">
+            <div class="eval-item" data-axis="4" data-val="0" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 0 Pas de soutien identifié</div>
+            <div class="eval-item" data-axis="4" data-val="1" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 1 1 ressource</div>
+            <div class="eval-item" data-axis="4" data-val="2" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 2 2 appuis minimum</div>
+            <div class="eval-item" data-axis="4" data-val="3" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 3 Je sais quand activer</div>
+            <div class="eval-item" data-axis="4" data-val="4" style="cursor:pointer; transition: opacity 0.2s;"><span class="c-box">☐</span> 4 Soutien déjà mobilisé</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap; align-items:center; gap:1.5rem; font-weight:800; color:#333; font-size:1rem; border-top: 2px solid #eee; padding-top: 1rem;">
+        <div style="font-size: 1.2rem; background: #f1f1f1; padding: 0.5rem 1rem; border-radius: 8px;">Score : <span id="total-score-display">0</span> /16</div>
+        <div style="display:flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem; color: #555;">
+          <span id="lvl-1"><strong>0–4</strong> Découverte</span>
+          <span id="lvl-2"><strong>5–8</strong> Prise de conscience</span>
+          <span id="lvl-3"><strong>9–12</strong> Structuré(e)</span>
+          <span id="lvl-4"><strong>13–16</strong> Opérationnel(le)</span>
         </div>
       </div>
-      <div style="display:flex;gap:.65rem;flex-wrap:wrap;justify-content:center">
-        <button class="fbtn prev" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.1)" onclick="goTo(0)">↩ Accueil</button>
-        <button class="fbtn next" onclick="goTo(10)">🗺 Parcours carto</button>
+
+      <div style="display:flex; gap:.65rem; flex-wrap:wrap; justify-content:center; margin-top: 2rem;">
+        <button class="fbtn prev" style="background:#f1f1f1; color:#333; border:none; padding: 0.5rem 1rem; border-radius: 5px; font-weight: bold; cursor: pointer;" onclick="goTo(0)">↩ Accueil</button>
       </div>
+
     </div>
   </div>
-  <!-- MLPB color row -->
+
   <div class="color-row color-row-4" style="flex-shrink:0">
     <div class="cblock" style="background:var(--bleu)" onclick="goTo(1)"><div class="cblock-icon">📚</div><div class="cblock-title">De quoi parle-t-on ?</div><div class="cblock-text">8 modules pour comprendre le territoire</div></div>
     <div class="cblock" style="background:var(--rose)" onclick="goTo(11)"><div class="cblock-icon">👥</div><div class="cblock-title">Réseau</div><div class="cblock-text">Qui je connais, qui me connaît</div></div>
@@ -1906,8 +1950,46 @@ footer{
   </div>
 </section>
 
-</main>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const evalItems = document.querySelectorAll('.eval-item');
+    const scoreDisplay = document.getElementById('total-score-display');
+    
+    // Objet pour stocker le score de chaque axe (de 1 à 4)
+    let scores = { 1: 0, 2: 0, 3: 0, 4: 0 };
 
+    evalItems.forEach(item => {
+      item.addEventListener('click', function() {
+        const axis = this.getAttribute('data-axis');
+        const val = parseInt(this.getAttribute('data-val'));
+
+        // 1. Réinitialiser toutes les cases de cet axe
+        document.querySelectorAll(`.eval-item[data-axis="${axis}"]`).forEach(el => {
+          el.querySelector('.c-box').innerHTML = '☐';
+          el.style.opacity = '0.6'; // Rend les autres options légèrement transparentes
+        });
+
+        // 2. Cocher la case cliquée et la mettre en évidence
+        this.querySelector('.c-box').innerHTML = '☑';
+        this.style.opacity = '1';
+
+        // 3. Mettre à jour le score pour cet axe
+        scores[axis] = val;
+
+        // 4. Calculer le score total
+        const total = scores[1] + scores[2] + scores[3] + scores[4];
+        scoreDisplay.innerText = total;
+
+        // 5. Mettre en surbrillance le niveau atteint en bas
+        document.querySelectorAll('[id^="lvl-"]').forEach(el => el.style.color = '#ccc');
+        if (total <= 4) document.getElementById('lvl-1').style.color = 'var(--rose)';
+        else if (total <= 8) document.getElementById('lvl-2').style.color = 'var(--orange)';
+        else if (total <= 12) document.getElementById('lvl-3').style.color = 'var(--bleu)';
+        else document.getElementById('lvl-4').style.color = 'var(--vert)';
+      });
+    });
+  });
+</script>
 <!-- ══ FOOTER ══ -->
 <footer>
   <div class="fp" id="fp"></div>
