@@ -69,8 +69,25 @@ nav{display:flex;align-items:center;gap:3px;}
 .rdv-btn:hover{background:#d07e00;transform:translateY(-1px);}
 
 /* ════════ MAIN ════════ */
-main{flex:1;overflow:hidden;position:relative;}
-.slide{position:absolute;inset:0;display:none;flex-direction:column;overflow:hidden;animation:fadeS .3s ease;}
+/* MAIN */
+main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+/* SLIDES */
+.slide{
+  display:none;
+  flex-direction:column;
+  height:100%;
+  animation:fadeS .3s ease;
+}
+
+.slide.active{
+  display:flex;
+}
 .slide.active{display:flex;}
 @keyframes fadeS{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
 
