@@ -541,102 +541,6 @@ footer{
 .pin-list-item .pli-del{position:absolute;top:.4rem;right:.4rem;background:none;border:none;cursor:pointer;color:rgba(23,23,24,.25);font-size:.9rem;line-height:1;transition:color .15s;}
 .pin-list-item .pli-del:hover{color:var(--rose);}
 #pin-modal.open{display:flex!important;}
-/* =========================================================
-   MA CARTE (mc-) — module "Ma carte territoire"
-   ========================================================= */
-.mc-container { position: relative; width: 100%; height: 100%; display: flex; overflow: hidden; }
-.mc-sidebar{
-  position:absolute; top:20px; left:20px; bottom:20px; width:380px;
-  background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
-  border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,0.15);
-  z-index:400; display:flex; flex-direction:column; overflow:hidden;
-  border:1px solid rgba(255,255,255,0.8);
-}
-.mc-view{ position:absolute; inset:0; display:flex; flex-direction:column; background:var(--blanc); transition:transform .3s ease; }
-.mc-view-left{ transform:translateX(-100%); }
-.mc-view-right{ transform:translateX(100%); }
-.mc-view-active{ transform:translateX(0); }
-
-.mc-header{ padding:20px; border-bottom:1px solid var(--gris-border); display:flex; align-items:center; justify-content:space-between; background:var(--blanc); z-index:10; }
-.mc-header h2{ font-family:'Nunito',sans-serif; font-size:22px; font-weight:900; color:var(--noir); text-transform:uppercase; margin:0; }
-.mc-badge{ background:var(--noir); color:var(--blanc); padding:4px 12px; border-radius:20px; font-size:13px; font-weight:bold; }
-
-.mc-body{ flex:1; overflow-y:auto; padding:20px; display:flex; flex-direction:column; }
-.mc-body::-webkit-scrollbar{ width:6px; }
-.mc-body::-webkit-scrollbar-thumb{ background:#cbd5e1; border-radius:10px; }
-
-.mc-btn{ width:100%; padding:16px; border-radius:12px; font-size:14px; font-weight:800; text-transform:uppercase; cursor:pointer; text-align:center; transition:all .2s; border:none; display:flex; align-items:center; justify-content:center; gap:8px; }
-.mc-btn-blue{ background:var(--bleu); color:var(--blanc); box-shadow:0 4px 15px rgba(40,151,213,0.2); }
-.mc-btn-blue:hover{ background:#1e7bb3; transform:translateY(-2px); box-shadow:0 6px 20px rgba(40,151,213,0.3); }
-.mc-btn-green{ background:var(--vert); color:var(--blanc); box-shadow:0 4px 15px rgba(149,193,31,0.2); }
-.mc-btn-green:hover{ background:#83aa1b; transform:translateY(-2px); box-shadow:0 6px 20px rgba(149,193,31,0.3); }
-
-.mc-back-btn{ width:36px; height:36px; border-radius:50%; border:1px solid var(--gris-border); background:var(--blanc); display:flex; align-items:center; justify-content:center; cursor:pointer; font-weight:bold; color:var(--noir); transition:.2s; }
-.mc-back-btn:hover{ background:var(--gris-clair); }
-
-.mc-link{ background:transparent; color:var(--bleu); font-weight:800; border:none; cursor:pointer; text-align:left; padding:0; font-size:13px; margin-bottom:20px; display:inline-block; }
-.mc-link:hover{ text-decoration:underline; }
-
-.mc-empty{ text-align:center; color:#888; margin-top:40px; }
-.mc-empty .icon{ font-size:48px; margin-bottom:15px; opacity:0.5; }
-.mc-empty p{ font-size:15px; font-weight:800; color:var(--noir); margin-bottom:4px; }
-.mc-empty span{ font-size:13px; font-weight:600; }
-
-.mc-place{ display:flex; align-items:center; padding:12px; border:2px solid var(--gris-border); border-radius:12px; cursor:pointer; transition:all .2s; background:var(--blanc); margin-bottom:10px; }
-.mc-place:hover{ border-color:var(--bleu); box-shadow:0 4px 12px rgba(0,0,0,0.05); }
-.mc-place-icon{ width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; color:var(--blanc); flex-shrink:0; margin-right:15px; box-shadow: inset 0 -2px 5px rgba(0,0,0,0.1); }
-.mc-place-info{ flex:1; overflow:hidden; }
-.mc-place-name{ font-weight:800; font-size:14px; color:var(--noir); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.mc-place-cat{ font-size:10px; font-weight:900; text-transform:uppercase; margin-top:3px; }
-.mc-place-del{ background:transparent; border:none; color:#ccc; width:36px; height:36px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:.2s; font-size:16px; }
-.mc-place-del:hover{ color:var(--rose); background:#fff0f4; }
-
-.mc-label{ display:block; font-size:12px; font-weight:900; color:var(--bleu); text-transform:uppercase; margin-bottom:10px; letter-spacing:.5px; }
-.mc-input{ width:100%; padding:16px; border:2px solid var(--gris-border); border-radius:12px; font-size:15px; font-weight:700; font-family:'Nunito Sans',sans-serif; background:var(--gris-clair); transition:all .2s; outline:none; margin-bottom:25px; box-sizing:border-box; }
-.mc-input:focus{ border-color:var(--bleu); background:var(--blanc); }
-
-.mc-cat-label{ position:relative; cursor:pointer; display:block; margin-bottom:12px; }
-.mc-cat-radio{ position:absolute; opacity:0; cursor:pointer; }
-.mc-cat-card{ display:flex; align-items:flex-start; gap:15px; padding:15px; border:2px solid var(--gris-border); border-radius:12px; transition:all .2s; background:var(--blanc); }
-.mc-cat-card:hover{ background:var(--gris-clair); }
-.mc-cat-radio:checked + .mc-cat-card{ border-color:var(--bg-color); background-color:var(--bg-light); box-shadow:0 6px 20px rgba(0,0,0,0.06); transform:translateY(-1px); }
-.mc-cat-icon{ font-size:32px; width:44px; text-align:center; flex-shrink:0; text-shadow:0 2px 4px rgba(0,0,0,0.1); }
-.mc-cat-text h4{ font-size:14px; font-weight:900; color:var(--noir); text-transform:uppercase; margin:0 0 4px 0; }
-.mc-cat-text p{ font-size:12px; color:#666; font-weight:600; line-height:1.4; margin:0; }
-
-.mc-search-box{ position:relative; margin-bottom:10px; }
-.mc-search-icon{ position:absolute; left:16px; top:16px; font-size:18px; opacity:0.5; }
-.mc-search-input{ padding-left:46px; margin-bottom:0; }
-.mc-search-loader{ position:absolute; right:16px; top:16px; width:20px; height:20px; border:3px solid var(--gris-border); border-top-color:var(--bleu); border-radius:50%; animation: mc-spin 1s linear infinite; display:none; }
-@keyframes mc-spin{ to{ transform:rotate(360deg); } }
-
-.mc-results{ background:var(--blanc); border:2px solid var(--gris-border); border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.1); max-height:220px; overflow-y:auto; display:none; margin-bottom:25px; }
-.mc-results.active{ display:block; }
-.mc-result-item{ padding:14px 16px; border-bottom:1px solid var(--gris-clair); cursor:pointer; display:flex; align-items:flex-start; gap:12px; transition:.2s; }
-.mc-result-item:hover{ background:#f0f8ff; }
-.mc-result-item strong{ display:block; font-size:14px; color:var(--noir); font-weight:800; }
-.mc-result-item span{ display:block; font-size:11px; color:#666; font-weight:600; margin-top:2px; }
-
-.mc-info{ background:#f0f8ff; border:1px solid #cce5ff; padding:15px; border-radius:12px; display:flex; gap:12px; align-items:flex-start; margin-bottom:25px; display:none; }
-.mc-info span{ font-size:22px; }
-.mc-info p{ font-size:13px; color:#004085; font-weight:700; line-height:1.5; margin:2px 0 0 0; }
-
-.mc-div-icon{ background:transparent; border:none; }
-.mc-pin-wrap{ display:flex; flex-direction:column; align-items:center; position:relative; }
-.mc-pin-bubble{ width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:24px; border:3px solid var(--blanc); box-shadow:0 4px 12px rgba(0,0,0,0.3); transition:transform .2s; }
-.mc-pin-bubble:hover{ transform:scale(1.15); }
-.mc-pin-label{ margin-top:6px; background:rgba(255,255,255,0.95); padding:5px 12px; border-radius:20px; font-size:12px; font-weight:900; color:var(--noir); white-space:nowrap; box-shadow:0 4px 10px rgba(0,0,0,0.1); border:1px solid var(--gris-border); backdrop-filter: blur(4px); pointer-events:none; }
-
-.mc-temp-pin{ font-size:46px; text-shadow:0 6px 12px rgba(0,0,0,0.3); animation: mc-bounce 1s infinite; cursor:grab; }
-.mc-temp-pin:active{ cursor:grabbing; animation:none; transform:scale(1.1); }
-@keyframes mc-bounce{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-12px);} }
-
-.mc-toast{ position:fixed; bottom:30px; left:50%; transform:translate(-50%,20px); background:var(--noir); color:var(--blanc); padding:14px 28px; border-radius:30px; font-size:14px; font-weight:800; display:flex; align-items:center; gap:12px; opacity:0; pointer-events:none; transition:all .3s; z-index:9999; box-shadow:0 10px 30px rgba(0,0,0,0.2); }
-.mc-toast.show{ opacity:1; transform:translate(-50%,0); }
-
-.leaflet-control-zoom{ border:none!important; box-shadow:0 4px 15px rgba(0,0,0,0.1)!important; border-radius:12px!important; overflow:hidden; margin:20px!important; }
-.leaflet-control-zoom a{ color:var(--noir)!important; width:40px!important; height:40px!important; line-height:40px!important; font-size:18px!important; font-weight:bold!important; }
-
 </style>
 </head>
 <body>
@@ -1969,84 +1873,14 @@ footer{
   </div>
 </section>
 
-<!-- ══════════ S19 — MA CARTE ══════════ -->
+<!-- ══════════ S19 — BILAN ══════════ -->
 <section class="slide" id="s19" style="padding:0;overflow:hidden;">
-  <div class="mc-container">
-    <!-- PANNEAU GAUCHE -->
-    <div class="mc-sidebar">
-      <!-- VUE 1 : LISTE -->
-      <div id="mc-view-list" class="mc-view mc-view-active">
-        <div class="mc-header">
-          <h2>Mes pins</h2>
-          <span id="mc-count" class="mc-badge">0</span>
-        </div>
-        <div class="mc-body">
-          <button class="mc-btn mc-btn-blue" onclick="mcOpenWizard()">
-            <span style="font-size: 20px;">📍</span> Ajouter un pin
-          </button>
-
-          <div id="mc-empty" class="mc-empty">
-            <div class="icon">🗺️</div>
-            <p>Ta carte est vide.</p>
-            <span>Commence par ajouter un pin.</span>
-          </div>
-
-          <div id="mc-list-container"></div>
-        </div>
-      </div>
-
-      <!-- VUE 2 : WIZARD -->
-      <div id="mc-view-wizard" class="mc-view mc-view-right">
-        <div class="mc-header" style="justify-content: flex-start; gap: 15px; padding: 15px 20px;">
-          <button class="mc-back-btn" onclick="mcCloseWizard()">←</button>
-          <h2 style="font-size: 16px;">Nouveau pin</h2>
-        </div>
-
-        <div class="mc-body" id="mc-wiz-scroll">
-          <!-- ETAPE 1 -->
-          <div id="mc-step-1">
-            <label class="mc-label">1. Nom du pin</label>
-            <input type="text" id="mc-name" class="mc-input" placeholder="Ex : Mission Locale, Mon appart...">
-
-            <label class="mc-label" style="margin-top: -5px;">Catégorie</label>
-            <div id="mc-cat-grid" style="margin-bottom: 25px;"></div>
-
-            <button class="mc-btn mc-btn-blue" onclick="mcGoToSearch()">
-              Suivant : placer sur la carte ➔
-            </button>
-          </div>
-
-          <!-- ETAPE 2 -->
-          <div id="mc-step-2" style="display: none;">
-            <button class="mc-link" onclick="mcBackToStep1()">← Retour</button>
-
-            <label class="mc-label">2. Rechercher une adresse</label>
-            <div class="mc-search-box">
-              <input type="text" id="mc-search" class="mc-input mc-search-input" placeholder="Ex : Mairie, Gare, 10 rue..." oninput="mcHandleSearch(this.value)" autocomplete="off">
-              <span class="mc-search-icon">🔍</span>
-              <div id="mc-loader" class="mc-search-loader"></div>
-            </div>
-
-            <div id="mc-results" class="mc-results"></div>
-
-            <div id="mc-info-confirm" class="mc-info">
-              <span>💡</span>
-              <p>Le pin est placé. <b>Tu peux le glisser sur la carte</b> pour l'ajuster précisément.</p>
-            </div>
-
-            <button id="mc-btn-confirm" class="mc-btn mc-btn-green" style="display: none;" onclick="mcConfirmAdd()">
-              ✅ Valider et enregistrer
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CARTE -->
-    <div id="mc-map" style="flex:1;height:100%;z-index:1;"></div>
-  </div>
-
-  <div id="mc-toast" class="mc-toast"></div>
+  <iframe
+    src="https://mlpb-tools.github.io/carte-PLT/"
+    style="width:100%;height:100%;border:none;display:block;flex:1;"
+    allowfullscreen
+    loading="lazy"
+  ></iframe>
 </section>
 <!-- ══════════ S20 — FINALE ══════════ -->
 <section class="slide" id="s20">
@@ -2258,247 +2092,343 @@ updateUI();
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
-// ════════ MA CARTE (mc-) ════════
-// Terminologie + catégories alignées avec l'index global : Réseau / Compétences / Solutions / Ressources
-
-const mcCategories = {
-  reseau:      { id:'reseau',      icon:'🤝', color:'var(--rose)',   bg:'#fff0f4', label:'Réseau',      desc:'Tes contacts, lieux connus, personnes ressources.' },
-  competences: { id:'competences', icon:'🛠️', color:'var(--vert)',   bg:'#f7fee7', label:'Compétences', desc:'Lieux où tu as appris, travaillé, aidé. Compétences liées.' },
-  solutions:   { id:'solutions',   icon:'✅', color:'var(--bleu)',   bg:'#eff6ff', label:'Solutions',   desc:'Transports, repas, papiers… tes solutions concrètes.' },
-  ressources:  { id:'ressources',  icon:'🌳', color:'var(--orange)', bg:'#fff7ed', label:'Ressources',  desc:'Lieux pour souffler, te détendre, retrouver ton calme.' }
+// ════════ MAP LOGIC ════════
+const CAT_COLORS = {
+  reseau:      '#d60b52',
+  competences: '#95c11f',
+  solutions:   '#2897d5',
+  ressources:  '#f39200'
+};
+const CAT_LABELS = {
+  reseau:'Réseau', competences:'Compétences', solutions:'Solutions', ressources:'Ressources'
 };
 
-let mcMap = null;
-let mcMapInitialized = false;
-let mcMarkers = {};
-let mcTempMarker = null;
-let mcCurrentLatLng = null;
+var map = null;
+var pins = [];
+var pendingLatLng = null;
+var selectedCat = null;
+var activeFilter = 'all';
+var mapInitialized = false;
+var wizardStep = 1;
 
-// --- INIT (appelée à l'ouverture de l'onglet "Ma carte") ---
-function mcInit() {
-  if (mcMapInitialized) return;
-
-  const container = document.getElementById('mc-map');
+function initMap() {
+  if (mapInitialized) return;
+  var container = document.getElementById('map-container');
   if (!container || container.offsetWidth === 0) return;
 
-  mcMap = L.map('mc-map', { zoomControl:false }).setView([43.29, -1.32], 12);
-  L.control.zoom({ position:'bottomright' }).addTo(mcMap);
-  L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', { maxZoom:17, attribution:'© OpenStreetMap France' }).addTo(mcMap);
+  map = L.map('map-container', { center: [43.29, -1.32], zoom: 12, zoomControl: true });
 
-  mcRenderCats();
-  mcMapInitialized = true;
+  L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap France',
+    maxZoom: 17
+  }).addTo(map);
+
+  map.on('click', function(e) {
+    var modal = document.getElementById('pin-modal');
+    // If wizard is open on step 2, record position
+    if (modal.style.display === 'flex' && wizardStep === 2) {
+      pendingLatLng = e.latlng;
+      var conf = document.getElementById('wiz-pos-confirm');
+      conf.style.display = 'block';
+      conf.textContent = 'Position choisie ! Clique sur "Ajouter le pin ici" pour confirmer.';
+      return;
+    }
+    // Otherwise open wizard step 1 with this position pre-set
+    pendingLatLng = e.latlng;
+    openAddPin();
+  });
+
+  // Add cursor crosshair on map when in step-2 mode
+  map.getContainer().style.cursor = '';
+  mapInitialized = true;
+
+  var demos = [
+    { name: 'Mission Locale Pays Basque', cat: 'reseau',      note: 'Mon conseiller référent', lat: 43.2951, lng: -1.3216 },
+    { name: 'Lycée René Cassin',          cat: 'competences', note: 'Bac obtenu ici',           lat: 43.3020, lng: -1.3100 },
+    { name: 'Arrêt Bus Gare',             cat: 'solutions',   note: 'Ligne 14 - départ 8h12',   lat: 43.2900, lng: -1.3150 },
+    { name: 'Parc de Xanadou',            cat: 'ressources',  note: 'Pour me vider la tête',    lat: 43.2980, lng: -1.3350 }
+  ];
+  demos.forEach(function(d) { addPin(d.name, d.cat, d.note, L.latLng(d.lat, d.lng)); });
 }
 
-function mcRenderCats() {
-  const grid = document.getElementById('mc-cat-grid');
-  if (!grid) return;
-
-  grid.innerHTML = Object.values(mcCategories).map(cat => `
-    <label class="mc-cat-label">
-      <input type="radio" name="mc-cat" value="${cat.id}" class="mc-cat-radio">
-      <div class="mc-cat-card" style="--bg-color:${cat.color}; --bg-light:${cat.bg};">
-        <div class="mc-cat-icon">${cat.icon}</div>
-        <div class="mc-cat-text">
-          <h4>${cat.label}</h4>
-          <p>${cat.desc}</p>
-        </div>
-      </div>
-    </label>
-  `).join('');
+function makeIcon(cat) {
+  var color = CAT_COLORS[cat] || '#666';
+  var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="42" viewBox="0 0 32 42">'
+    + '<ellipse cx="16" cy="40" rx="5" ry="2.5" fill="rgba(0,0,0,.2)"/>'
+    + '<path d="M16 2C9.37 2 4 7.37 4 14c0 9 12 26 12 26s12-17 12-26c0-6.63-5.37-12-12-12z" fill="' + color + '"/>'
+    + '<circle cx="16" cy="14" r="5.5" fill="white" opacity=".9"/>'
+    + '</svg>';
+  return L.divIcon({ html: svg, iconSize: [32,42], iconAnchor: [16,42], popupAnchor: [0,-42], className: '' });
 }
 
-// --- NAVIGATION WIZARD ---
-function mcOpenWizard() {
-  document.getElementById('mc-view-list').classList.remove('mc-view-active');
-  document.getElementById('mc-view-list').classList.add('mc-view-left');
-  document.getElementById('mc-view-wizard').classList.add('mc-view-active');
-  document.getElementById('mc-view-wizard').classList.remove('mc-view-right');
-
-  document.getElementById('mc-name').value = '';
-  document.getElementById('mc-search').value = '';
-  document.getElementById('mc-results').classList.remove('active');
-
-  document.getElementById('mc-step-1').style.display = 'block';
-  document.getElementById('mc-step-2').style.display = 'none';
-  document.getElementById('mc-info-confirm').style.display = 'none';
-  document.getElementById('mc-btn-confirm').style.display = 'none';
-
-  document.querySelectorAll('input[name="mc-cat"]').forEach(r => r.checked = false);
-  if (mcTempMarker) { mcMap.removeLayer(mcTempMarker); mcTempMarker = null; }
-
-  setTimeout(() => document.getElementById('mc-name').focus(), 200);
+function buildPopup(name, cat, note) {
+  var color = CAT_COLORS[cat];
+  var label = CAT_LABELS[cat];
+  var noteHtml = note ? '<div style="font-size:.75rem;color:rgba(23,23,24,.55);margin-top:.2rem;">' + note + '</div>' : '';
+  return '<div style="font-family:Arial,sans-serif;min-width:160px;">'
+    + '<div style="display:flex;align-items:center;gap:.4rem;margin-bottom:.3rem;">'
+    + '<div style="width:9px;height:9px;border-radius:50%;background:' + color + ';flex-shrink:0;"></div>'
+    + '<span style="font-size:.65rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:' + color + ';">' + label + '</span>'
+    + '</div>'
+    + '<div style="font-size:.92rem;font-weight:800;line-height:1.3;">' + name + '</div>'
+    + noteHtml
+    + '</div>';
 }
 
-function mcCloseWizard() {
-  document.getElementById('mc-view-wizard').classList.remove('mc-view-active');
-  document.getElementById('mc-view-wizard').classList.add('mc-view-right');
-  document.getElementById('mc-view-list').classList.remove('mc-view-left');
-  document.getElementById('mc-view-list').classList.add('mc-view-active');
-  if (mcTempMarker) { mcMap.removeLayer(mcTempMarker); mcTempMarker = null; }
+function addPin(name, cat, note, latlng) {
+  var id = Date.now() + Math.random();
+  var marker = L.marker(latlng, { icon: makeIcon(cat), draggable: true }).addTo(map);
+  marker.bindPopup(buildPopup(name, cat, note), { maxWidth: 220 });
+  var pin = { id: id, name: name, cat: cat, note: note, latlng: latlng, marker: marker };
+  marker.on('dragend', function(e) { pin.latlng = e.target.getLatLng(); });
+  pins.push(pin);
+  renderPinList();
+  applyFilter(activeFilter);
+  document.getElementById('pin-empty').style.display = 'none';
+  return pin;
 }
 
-function mcGoToSearch() {
-  const name = document.getElementById('mc-name').value.trim();
-  const cat = document.querySelector('input[name="mc-cat"]:checked');
-  if (!name) return mcShowToast("⚠️", "Donne un nom au pin.");
-  if (!cat) return mcShowToast("⚠️", "Choisis une catégorie.");
-
-  document.getElementById('mc-step-1').style.display = 'none';
-  document.getElementById('mc-step-2').style.display = 'block';
-  setTimeout(() => document.getElementById('mc-search').focus(), 80);
+function removePin(id) {
+  var pin = pins.find(function(p) { return p.id == id; });
+  if (pin) {
+    map.removeLayer(pin.marker);
+    pins = pins.filter(function(p) { return p.id != id; });
+    renderPinList();
+    if (pins.length === 0) document.getElementById('pin-empty').style.display = 'block';
+  }
 }
 
-function mcBackToStep1() {
-  document.getElementById('mc-step-2').style.display = 'none';
-  document.getElementById('mc-step-1').style.display = 'block';
+function buildPinItem(pin) {
+  var color = CAT_COLORS[pin.cat];
+  var label = CAT_LABELS[pin.cat];
+  var noteHtml = pin.note ? '<div class="pli-note">' + pin.note + '</div>' : '';
+  var catHtml = '<div style="font-size:.65rem;color:' + color + ';font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-top:.15rem;">' + label + '</div>';
+  return '<div class="pli-dot" style="background:' + color + ';"></div>'
+    + '<div style="flex:1;min-width:0;">'
+    + '<div class="pli-name">' + pin.name + '</div>'
+    + noteHtml + catHtml
+    + '</div>'
+    + '<button class="pli-del" onclick="removePin(' + pin.id + ')" title="Supprimer">✕</button>';
 }
 
-// --- RECHERCHE NOMINATIM ---
-let mcSearchTimeout;
-async function mcHandleSearch(query) {
-  clearTimeout(mcSearchTimeout);
-  const resEl = document.getElementById('mc-results');
-  const loader = document.getElementById('mc-loader');
+function renderPinList() {
+  var list = document.getElementById('pin-list');
+  list.querySelectorAll('.pin-list-item').forEach(function(el) { el.remove(); });
+  var filtered = activeFilter === 'all' ? pins : pins.filter(function(p) { return p.cat === activeFilter; });
+  filtered.forEach(function(pin) {
+    var item = document.createElement('div');
+    item.className = 'pin-list-item';
+    item.innerHTML = buildPinItem(pin);
+    (function(p) {
+      item.addEventListener('click', function(e) {
+        if (e.target.classList.contains('pli-del')) return;
+        map.setView(p.latlng, 15, { animate: true });
+        p.marker.openPopup();
+      });
+    })(pin);
+    list.appendChild(item);
+  });
+  if (filtered.length === 0 && pins.length > 0) {
+    var empty = document.createElement('div');
+    empty.style.cssText = 'padding:1rem .8rem;text-align:center;color:rgba(23,23,24,.35);font-size:.78rem;font-style:italic;';
+    empty.textContent = 'Aucun lieu dans cet axe.';
+    list.appendChild(empty);
+  }
+}
 
-  if (query.length < 3) { resEl.classList.remove('active'); loader.style.display = 'none'; return; }
-  loader.style.display = 'block';
+function filterMap(cat, btn) {
+  activeFilter = cat;
+  document.querySelectorAll('.map-filter-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  applyFilter(cat);
+  renderPinList();
+}
 
-  mcSearchTimeout = setTimeout(async () => {
-    resEl.innerHTML = '<div class="mc-result-item" style="justify-content:center;color:#888;"><strong>Recherche…</strong></div>';
-    resEl.classList.add('active');
-    try {
-      const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&countrycodes=fr&limit=5&addressdetails=1`);
-      const data = await res.json();
+function applyFilter(cat) {
+  pins.forEach(function(pin) {
+    if (cat === 'all' || pin.cat === cat) {
+      if (!map.hasLayer(pin.marker)) pin.marker.addTo(map);
+    } else {
+      if (map.hasLayer(pin.marker)) map.removeLayer(pin.marker);
+    }
+  });
+}
+
+// ── WIZARD ───────────────────────────────────────────────
+// ── ADDRESS SEARCH (Nominatim / OpenStreetMap) ──
+function searchAddress() {
+  var q = document.getElementById('addr-search').value.trim();
+  if (!q) return;
+  var resEl = document.getElementById('addr-results');
+
+  // Affiche spinner
+  resEl.style.display = 'block';
+  resEl.innerHTML = '<div style="padding:.7rem 1rem;font-size:.78rem;color:rgba(23,23,24,.45);font-style:italic;display:flex;align-items:center;gap:.5rem;">'
+    + '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="animation:spin .8s linear infinite;flex-shrink:0;">'
+    + '<circle cx="7" cy="7" r="5.5" stroke="#ccc" stroke-width="1.5"/>'
+    + '<path d="M7 1.5A5.5 5.5 0 0112.5 7" stroke="#2897d5" stroke-width="1.5" stroke-linecap="round"/>'
+    + '</svg>Recherche en cours…</div>';
+
+  // Recherche sur FR + ES (Pays Basque transfrontalier)
+  var url = 'https://nominatim.openstreetmap.org/search?format=json&limit=6&countrycodes=fr,es&viewbox=-2.0,44.5,0.0,43.0&bounded=0&q=' + encodeURIComponent(q);
+
+  fetch(url, { headers: { 'Accept-Language': 'fr' } })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      resEl.innerHTML = '';
+
       if (!data || data.length === 0) {
-        resEl.innerHTML = '<div class="mc-result-item" style="justify-content:center;color:#888;"><strong>Aucun résultat 😔</strong></div>';
-      } else {
-        resEl.innerHTML = data.map((item) => {
-          const mainName = item.name || item.display_name.split(',')[0];
-          const safeName = (mainName || '').replace(/'/g, "\'").replace(/"/g, "&quot;");
-          return `
-          <div class="mc-result-item" onclick="mcSelectLocation(${item.lat}, ${item.lon}, '${safeName}')">
-            <span style="font-size:18px;opacity:0.6;margin-top:2px;">📍</span>
-            <div><strong>${mainName}</strong><span>${item.display_name.replace(mainName + ', ', '')}</span></div>
-          </div>`;
-        }).join('');
+        // 2e tentative sans restriction géo
+        return fetch('https://nominatim.openstreetmap.org/search?format=json&limit=5&q=' + encodeURIComponent(q), { headers: { 'Accept-Language': 'fr' } })
+          .then(function(r2) { return r2.json(); })
+          .then(function(data2) {
+            if (!data2 || data2.length === 0) {
+              resEl.innerHTML = '<div style="padding:.7rem 1rem;font-size:.78rem;color:var(--rose);font-family:Nunito,sans-serif;font-weight:700;">'
+                + 'Aucun résultat. Essaie : "rue de la Paix, Bayonne" ou "Mission Locale Bayonne"</div>';
+            } else {
+              renderResults(data2, resEl);
+            }
+          });
       }
-    } catch(e) {
-      resEl.innerHTML = '<div class="mc-result-item" style="justify-content:center;color:var(--rouge);"><strong>Erreur réseau</strong></div>';
-    }
-    loader.style.display = 'none';
-  }, 500);
+      renderResults(data, resEl);
+    })
+    .catch(function() {
+      resEl.innerHTML = '<div style="padding:.7rem 1rem;font-size:.78rem;color:var(--rose);font-weight:700;">'
+        + 'Pas de connexion. Clique directement sur la carte pour poser ton pin.</div>';
+    });
 }
 
-// --- PLACEMENT TEMPORAIRE ---
-function mcSelectLocation(lat, lon, addressSelected) {
-  document.getElementById('mc-results').classList.remove('active');
-  document.getElementById('mc-search').value = addressSelected;
-  mcCurrentLatLng = [lat, lon];
+function renderResults(data, resEl) {
+  resEl.innerHTML = '';
+  data.forEach(function(place) {
+    var parts = place.display_name.split(',');
+    var mainLabel = parts.slice(0, 2).join(',').trim();
+    var subLabel = parts.slice(2, 4).join(',').trim();
 
-  mcMap.flyTo(mcCurrentLatLng, 16, { duration: 1.5 });
-  if (mcTempMarker) mcMap.removeLayer(mcTempMarker);
+    var row = document.createElement('div');
+    row.style.cssText = 'padding:.55rem .9rem;cursor:pointer;border-bottom:1px solid #f0f0f0;transition:background .12s;';
+    row.innerHTML = '<div style="font-family:Nunito,sans-serif;font-size:.82rem;font-weight:700;line-height:1.3;">' + mainLabel + '</div>'
+      + (subLabel ? '<div style="font-size:.72rem;color:rgba(23,23,24,.45);margin-top:.1rem;">' + subLabel + '</div>' : '');
 
-  mcTempMarker = L.marker(mcCurrentLatLng, {
-    icon: L.divIcon({ className:'mc-div-icon', html:`<div class="mc-temp-pin">📍</div>`, iconSize:[40,40], iconAnchor:[20,40] }),
-    draggable:true, zIndexOffset:1000
-  }).addTo(mcMap);
-
-  mcTempMarker.on('dragend', e => { mcCurrentLatLng = e.target.getLatLng(); });
-
-  document.getElementById('mc-info-confirm').style.display = 'flex';
-  document.getElementById('mc-btn-confirm').style.display = 'flex';
-
-  setTimeout(() => {
-    const sc = document.getElementById('mc-wiz-scroll');
-    sc.scrollTo({ top: sc.scrollHeight, behavior:'smooth' });
-  }, 80);
-
-  mcShowToast("🎯", "Glisse le pin pour ajuster !");
+    row.addEventListener('mouseenter', function() { this.style.background = 'rgba(40,151,213,.07)'; });
+    row.addEventListener('mouseleave', function() { this.style.background = ''; });
+    row.addEventListener('click', function() {
+      var lat = parseFloat(place.lat);
+      var lng = parseFloat(place.lon);
+      pendingLatLng = L.latLng(lat, lng);
+      map.setView(pendingLatLng, 16, { animate: true });
+      resEl.style.display = 'none';
+      document.getElementById('addr-search').value = mainLabel;
+      var conf = document.getElementById('wiz-pos-confirm');
+      conf.style.display = 'block';
+      conf.textContent = 'Adresse trouvée : ' + mainLabel + ' — clique sur "Poser le pin ici" pour confirmer.';
+    });
+    resEl.appendChild(row);
+  });
 }
 
-// --- VALIDATION ---
-function mcConfirmAdd() {
-  const name = document.getElementById('mc-name').value.trim();
-  const catId = document.querySelector('input[name="mc-cat"]:checked').value;
-  const catData = mcCategories[catId];
-  const id = 'pin_' + Date.now();
-
-  if (mcTempMarker) { mcMap.removeLayer(mcTempMarker); mcTempMarker = null; }
-
-  const newPin = { id, name, cat: catData, latlng: mcCurrentLatLng };
-
-  newPin.marker = L.marker(newPin.latlng, { icon: L.divIcon({
-    className:'mc-div-icon',
-    html:`<div class="mc-pin-wrap">
-            <div class="mc-pin-bubble" style="background-color:${catData.color};">${catData.icon}</div>
-            <div class="mc-pin-label">${name}</div>
-          </div>`,
-    iconSize:[48,70], iconAnchor:[24,35]
-  }), draggable:true }).addTo(mcMap);
-
-  newPin.marker.on('dragend', e => { newPin.latlng = e.target.getLatLng(); });
-
-  mcMarkers[id] = newPin;
-  mcUpdateList();
-  mcCloseWizard();
-  mcShowToast("✅", "Pin enregistré !");
+function openAddPin() {
+  wizardStep = 1;
+  document.getElementById('pin-name').value = '';
+  document.getElementById('pin-note').value = '';
+  document.getElementById('addr-search').value = '';
+  document.getElementById('addr-results').style.display = 'none';
+  document.getElementById('addr-error').style.display = 'none';
+  document.querySelectorAll('.cat-opt').forEach(function(o) { o.classList.remove('selected'); });
+  document.getElementById('cat-error').style.display = 'none';
+  document.getElementById('wiz-pos-confirm').style.display = 'none';
+  selectedCat = null;
+  showStep(1);
+  document.getElementById('pin-modal').style.display = 'flex';
+  setTimeout(function() { document.getElementById('pin-name').focus(); }, 80);
 }
 
-// --- LISTE ---
-function mcUpdateList() {
-  const listEl = document.getElementById('mc-list-container');
-  const keys = Object.keys(mcMarkers);
-  document.getElementById('mc-count').innerText = keys.length;
-  document.getElementById('mc-empty').style.display = keys.length === 0 ? 'block' : 'none';
-
-  listEl.innerHTML = keys.slice().reverse().map(id => {
-    const p = mcMarkers[id];
-    const lat = p.latlng.lat ?? p.latlng[0];
-    const lng = p.latlng.lng ?? p.latlng[1];
-    return `
-    <div class="mc-place" onclick="mcMap.flyTo([${lat}, ${lng}], 17)">
-      <div class="mc-place-icon" style="background-color:${p.cat.color}">${p.cat.icon}</div>
-      <div class="mc-place-info">
-        <div class="mc-place-name">${p.name}</div>
-        <div class="mc-place-cat" style="color:${p.cat.color}">${p.cat.label}</div>
-      </div>
-      <button class="mc-place-del" onclick="event.stopPropagation(); mcDeletePin('${p.id}')">✕</button>
-    </div>`;
-  }).join('');
+function closeAddPin() {
+  document.getElementById('pin-modal').style.display = 'none';
+  pendingLatLng = null;
+  wizardStep = 1;
+  map.getContainer().style.cursor = '';
 }
 
-function mcDeletePin(id) {
-  if (!mcMarkers[id]) return;
-  mcMap.removeLayer(mcMarkers[id].marker);
-  delete mcMarkers[id];
-  mcUpdateList();
-  mcShowToast("🗑️", "Pin supprimé.");
+function showStep(n) {
+  wizardStep = n;
+  document.getElementById('wiz-step1').style.display = n === 1 ? 'block' : 'none';
+  document.getElementById('wiz-step2').style.display = n === 2 ? 'block' : 'none';
+  // Tab highlight
+  document.getElementById('wiz-step1-tab').style.borderBottomColor = n === 1 ? 'var(--bleu)' : 'transparent';
+  document.getElementById('wiz-step1-tab').style.color = n === 1 ? 'var(--bleu)' : 'rgba(23,23,24,.3)';
+  document.getElementById('wiz-step2-tab').style.borderBottomColor = n === 2 ? 'var(--vert)' : 'transparent';
+  document.getElementById('wiz-step2-tab').style.color = n === 2 ? 'var(--vert)' : 'rgba(23,23,24,.3)';
+  // Update crosshair on map
+  map.getContainer().style.cursor = n === 2 ? 'crosshair' : '';
 }
 
-// --- TOAST ---
-let mcToastTimer;
-function mcShowToast(icon, message) {
-  const t = document.getElementById('mc-toast');
-  t.innerHTML = `<span style="font-size:24px;">${icon}</span> <span>${message}</span>`;
-  t.classList.add('show');
-  clearTimeout(mcToastTimer);
-  mcToastTimer = setTimeout(() => t.classList.remove('show'), 3500);
+function wizNext() {
+  var name = document.getElementById('pin-name').value.trim();
+  if (!name) {
+    var inp = document.getElementById('pin-name');
+    inp.style.borderColor = '#d60b52';
+    inp.focus();
+    return;
+  }
+  if (!selectedCat) {
+    document.getElementById('cat-error').style.display = 'block';
+    return;
+  }
+  // Populate step-2 résumé
+  var color = CAT_COLORS[selectedCat];
+  var label = CAT_LABELS[selectedCat];
+  document.getElementById('wiz-resume-dot').style.background = color;
+  document.getElementById('wiz-resume-name').textContent = name;
+  document.getElementById('wiz-resume-cat').textContent = label;
+  document.getElementById('wiz-resume').style.borderColor = color;
+  document.getElementById('wiz-resume').style.background = 'rgba(0,0,0,.02)';
+  document.getElementById('wiz-pos-confirm').style.display = 'none';
+  // Pre-fill search with pin name
+  var addrInput = document.getElementById('addr-search');
+  if (!addrInput.value) addrInput.value = name;
+  showStep(2);
+  setTimeout(function() { addrInput.select(); addrInput.focus(); }, 80);
 }
 
-// --- HOOK NAV : init quand on arrive sur l'onglet "Ma carte" (slide 19) ---
-(function(){
-  const _goTo = window.goTo;
-  if (typeof _goTo !== 'function') return;
-  window.goTo = function(n){
-    _goTo(n);
-    if (n === 19) {
-      setTimeout(() => {
-        mcInit();
-        if (mcMap) mcMap.invalidateSize();
-      }, 120);
-    }
-  };
-})();
+function wizBack() {
+  showStep(1);
+}
+
+function selectCat(el) {
+  document.querySelectorAll('.cat-opt').forEach(function(o) { o.classList.remove('selected'); });
+  el.classList.add('selected');
+  selectedCat = el.dataset.val;
+  document.getElementById('cat-error').style.display = 'none';
+}
+
+function confirmAddPin() {
+  var name = document.getElementById('pin-name').value.trim();
+  var note = document.getElementById('pin-note').value.trim();
+  if (!name || !selectedCat) return;
+  var latlng = pendingLatLng || map.getCenter();
+  addPin(name, selectedCat, note, latlng);
+  closeAddPin();
+  map.setView(latlng, Math.max(map.getZoom(), 14), { animate: true });
+}
+
+var origGoTo = window.goTo;
+window.goTo = function(n) {
+  origGoTo(n);
+  var slides = document.querySelectorAll('.slide');
+  var mapIdx = -1;
+  slides.forEach(function(s, i) { if (s.id === 's-map') mapIdx = i; });
+  if (n === mapIdx) {
+    setTimeout(function() {
+      initMap();
+      if (map) map.invalidateSize();
+    }, 100);
+  }
+};
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeAddPin();
+});
 </script>
 
 </body>
